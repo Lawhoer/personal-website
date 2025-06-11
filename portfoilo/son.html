@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portföy</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&family=Pacifico&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <div class="main-card">
+            <div class="left-section">
+                <div class="profile-section">
+                    <div class="profile-photo">
+                        <img src="../profil.png" alt="Profil Fotoğrafı">
+                    </div>
+                    <div class="profile-text">
+                        <h1 class="name">Eren Akıncı</h1>
+                        <p class="title">Bilgisayar Mühendisi</p>
+                    </div>
+                    <div class="social-icons">
+                        <a href="https://www.linkedin.com/in/eren-akinci/" target="_blank" class="social-link">
+                            <i class="fa-brands fa-linkedin-in"></i>
+                        </a>
+                        <a href="https://github.com/Lawhoer" target="_blank" class="social-link">
+                            <i class="fa-brands fa-github"></i>
+                        </a>
+                        <a href="mailto:eren.akinci.dev@gmail.com" target="_blank" class="social-link">
+                            <i class="fa-solid fa-envelope"></i>
+                        </a>
+                    </div>
+                    <div class="download-section">
+                        <button class="download-btn">Download CV</button>
+                    </div>
+                </div>
+            </div>
+            <div class="right-section">
+                <div class="page-indicators">
+                    <a href="#profile" class="indicator active"></a>
+                    <a href="#about" class="indicator"></a>
+                    <a href="#skills" class="indicator"></a>
+                    <a href="#projects" class="indicator"></a>
+                </div>
+                
+                <section id="profile" class="profile-main-section">
+                    <!-- Ripple Effects -->
+                    <div class="ripple-container">
+                        <div class="circle"></div>
+                    </div>
+                    <div class="center-drop"></div>
+                    
+                    <div class="profile-header">
+                        <div class="profile-text-main">
+                            <p class="hello-text initial">Hello</p>
+                            <h1 class="name-main">
+                                <span class="static-text">I am&nbsp;</span>
+                                <span class="dynamic-text" data-text1="Eren Akıncı" data-text2="A Developer"></span>
+                            </h1>
+                        </div>
+                    </div>
+                    
+                    <!-- Scroll Down Arrow -->
+                    <div class="scroll-arrow">
+                        <div class="arrow-icon">
+                            <i class="fa-solid fa-chevron-down"></i>
+                        </div>
+                    </div>
+                </section>
+                
+                <section id="about" class="about-main-section">
+                    <div class="about-content">
+                        <h2 class="section-title">Hakkımda</h2>
+                        <div class="section-line"></div>
+                        <p class="about-text">
+                            Yenilikçi projelere katkı sağlamak ve becerilerimi sürekli geliştirmek amacıyla çalışıyor, eleştirel bir zihniyet ve
+                            disiplinli çalışma ahlakına sahip olduğumu düşünüyorum. Etkili iletişime üst düzeyde öncelik verip teknoloji
+                            dünyasındaki yenilikleri yakından takip ederek yaratıcı çözümler üretmeye odaklanıyorum.
+                        </p>
+                    </div>
+                </section>
+                
+                <section id="skills" class="skills-main-section">
+                    <div class="about-content">
+                        <h2 class="section-title">Beceriler & Diller</h2>
+                        <div class="section-line"></div>
+                        <div class="skills-section">
+                            <div class="skill-category">
+                                <span class="skill-category-title">Teknik Beceriler:</span>
+                                <span class="skill-list">Python, Java, C, C++, C#, Git, Kotlin, HTML/CSS, JavaScript, SQL, Unity Engine, TensorFlow, Keras, ASP.NET MVC, Node.js, Entity Framework, RESTful API, Agile</span>
+                            </div>
+                            
+                            <div class="skill-category">
+                                <span class="skill-category-title">Kişisel Beceriler:</span>
+                                <span class="skill-list">Etkili iletişim, takım çalışması, problem çözme, liderlik, hızlı uyum sağlama, verimli zaman yönetimi</span>
+                            </div>
+                            
+                            <div class="skill-category">
+                                <span class="skill-category-title">Diller:</span>
+                                <span class="skill-list">Türkçe (Ana dil), İngilizce (B2)</span>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                
+                <section id="projects" class="projects-main-section">
+                    <div class="section-header">
+                        <h2 class="section-title">Projeler</h2>
+                        <div class="section-line"></div>
+                    </div>
+                    <div class="carousel-container">
+                        <div class="carousel-wrapper">
+                            <div class="carousel-card active">
+                                <div class="card-content">
+                                    <h3>TÜBİTAK Tarım Projesi</h3>
+                                    <p>Yapay zeka destekli tarım çözümü</p>
+                                </div>
+                            </div>
+                            
+                            <div class="carousel-card">
+                                <div class="card-content">
+                                    <h3>Türkçe Yardım Çağrısı</h3>
+                                    <p>Doğal dil işleme ile yardım tespiti</p>
+                                </div>
+                            </div>
+                            
+                            <div class="carousel-card">
+                                <div class="card-content">
+                                    <h3>Short-Movie Website</h3>
+                                    <p>Film ve dizi yönetim platformu</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="carousel-bottom">
+                        <div class="carousel-navigation">
+                            <button class="carousel-btn prev-btn">‹</button>
+                            <div class="carousel-info">
+                                <span class="current-slide">1</span> / <span class="total-slides">3</span>
+                            </div>
+                            <button class="carousel-btn next-btn">›</button>
+                        </div>
+                        <button class="carousel-btn dice-btn" title="Rastgele kart seç">
+                            <i class="fa-solid fa-dice"></i>
+                        </button>
+                    </div>
+
+                    <!-- Project Overlay -->
+                    <div class="project-overlay">
+                        <button class="close-btn">✕</button>
+                        <div class="overlay-content">
+                            <h2></h2>
+                            <p></p>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        // Handwriting Animation for Hello
+        function writeHandwritingText(element, text, startDelay) {
+            element.innerHTML = ''; // Boşalt
+            
+            setTimeout(() => {
+                for (let i = 0; i < text.length; i++) {
+                    const letter = document.createElement('span');
+                    letter.textContent = text[i];
+                    letter.className = 'letter';
+                    letter.style.animationDelay = `${i * 0.15}s`;
+                    element.appendChild(letter);
+                }
+            }, startDelay * 1000);
+        }
+        
+        // Dynamic Text Animation
+        function scrambleText(element, text, callback) {
+            const chars = '!@#$%^&*()_+-=[]{}|;:,.<>?ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+            let currentIndex = 0;
+            
+            element.textContent = ''; // Başlangıçta boş
+            
+            function addNextLetter() {
+                if (currentIndex >= text.length) {
+                    if (callback) callback(); // Animasyon bitince callback çağır
+                    return;
+                }
+                
+                const targetChar = text[currentIndex];
+                let scrambleCount = 0;
+                const maxScrambles = 5;
+                
+                const scrambleInterval = setInterval(() => {
+                    if (scrambleCount < maxScrambles) {
+                        const currentText = text.slice(0, currentIndex);
+                        const scrambleChar = targetChar === ' ' ? ' ' : chars[Math.floor(Math.random() * chars.length)];
+                        element.textContent = currentText + scrambleChar;
+                        scrambleCount++;
+                    } else {
+                        element.textContent = text.slice(0, currentIndex + 1);
+                        clearInterval(scrambleInterval);
+                        currentIndex++;
+                        
+                        setTimeout(() => {
+                            addNextLetter();
+                        }, 8);
+                    }
+                }, 15);
+            }
+            
+            addNextLetter();
+        }
+        
+        function deleteText(element, callback) {
+            const currentText = element.textContent;
+            let currentIndex = currentText.length;
+            
+            function deleteLetter() {
+                if (currentIndex <= 0) {
+                    if (callback) callback();
+                    return;
+                }
+                
+                element.textContent = currentText.slice(0, currentIndex - 1);
+                currentIndex--;
+                
+                setTimeout(() => {
+                    deleteLetter();
+                }, 30);
+            }
+            
+            deleteLetter();
+        }
+        
+        // Sayfa yüklendiğinde animasyon başlat
+        window.addEventListener('load', function() {
+            const dynamicElement = document.querySelector('.dynamic-text');
+            const nameMain = document.querySelector('.name-main');
+            const helloText = document.querySelector('.hello-text');
+            
+            // Ripple efektlerini aktif et
+            const rippleContainer = document.querySelector('.ripple-container');
+            const centerDrop = document.querySelector('.center-drop');
+            
+            // 1. Ripple ve Hello aynı anda başlat
+            rippleContainer.classList.add('active');
+            centerDrop.classList.add('active');
+            
+            // Hello yazısını el yazısı animasyonuyla yaz
+            writeHandwritingText(helloText, "Hello", 0.6);
+            
+            // 2. 1.5s sonra hello küçülmeye başlasın
+            setTimeout(() => {
+                helloText.classList.remove('initial');
+                helloText.classList.add('final');
+                
+                // 3. Hello küçüldükten sonra I am kısmını fade-in ile göster
+                setTimeout(() => {
+                    nameMain.classList.add('showing');
+                    
+                    // Kısa bir süre sonra fade-in başlat
+                    setTimeout(() => {
+                        nameMain.classList.add('visible');
+                    }, 50);
+                }, 1000);
+                
+                // 4. I am göründükten 0.5s sonra typing animasyonu başlasın
+                setTimeout(() => {
+                    // Typing başladığında sola kaydır
+                    nameMain.classList.add('typing');
+                    
+                    // "Eren Akıncı" yazıyor
+                    scrambleText(dynamicElement, "Eren Akıncı", function() {
+                        // Yazma bitince ortala
+                        nameMain.classList.remove('typing');
+                        nameMain.classList.add('centered');
+                        
+                        setTimeout(() => {
+                            // Silme başladığında tekrar sola kaydır
+                            nameMain.classList.remove('centered');
+                            nameMain.classList.add('typing');
+                            
+                            // Sonra siliyor
+                            deleteText(dynamicElement, function() {
+                                setTimeout(() => {
+                                    // "A Developer" yazıyor
+                                    scrambleText(dynamicElement, "A Developer", function() {
+                                        // Yazma bitince ortala
+                                        nameMain.classList.remove('typing');
+                                        nameMain.classList.add('centered');
+                                    });
+                                }, 100);
+                            });
+                        }, 1500); // "Eren Akıncı" 1.5 saniye kalıyor
+                    });
+                }, 500);
+            }, 1500);
+        });
+        
+        // Smooth scroll ve active indicator kontrolü
+        const rightSection = document.querySelector('.right-section');
+        const indicators = document.querySelectorAll('.indicator');
+        
+        // Scroll event listener
+        rightSection.addEventListener('scroll', function() {
+            const sections = document.querySelectorAll('.profile-main-section, .about-main-section, .skills-main-section, .projects-main-section');
+            const scrollTop = rightSection.scrollTop;
+            const sectionHeight = rightSection.clientHeight;
+            
+            sections.forEach((section, index) => {
+                const sectionTop = section.offsetTop;
+                const sectionBottom = sectionTop + section.offsetHeight;
+                
+                if (scrollTop >= sectionTop - sectionHeight/2 && scrollTop < sectionBottom - sectionHeight/2) {
+                    indicators.forEach(ind => ind.classList.remove('active'));
+                    indicators[index]?.classList.add('active');
+                }
+            });
+        });
+        
+        // Indicator click navigation
+        indicators.forEach((indicator, index) => {
+            indicator.addEventListener('click', function(e) {
+                e.preventDefault();
+                const sections = document.querySelectorAll('.profile-main-section, .about-main-section, .skills-main-section, .projects-main-section');
+                if (sections[index]) {
+                    rightSection.scrollTo({
+                        top: sections[index].offsetTop,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // Carousel functionality
+        const cards = document.querySelectorAll('.carousel-card');
+        const prevBtn = document.querySelector('.prev-btn');
+        const nextBtn = document.querySelector('.next-btn');
+        const currentSlideSpan = document.querySelector('.current-slide');
+        const totalSlidesSpan = document.querySelector('.total-slides');
+        const carouselBottom = document.querySelector('.carousel-bottom');
+        const projectOverlay = document.querySelector('.project-overlay');
+        const overlayTitle = document.querySelector('.overlay-content h2');
+        const overlayText = document.querySelector('.overlay-content p');
+        const closeBtn = document.querySelector('.close-btn');
+        
+        let currentIndex = 0;
+        let isExpanded = false;
+        const totalSlides = cards.length;
+        
+        // Project data
+        const projects = [
+            {
+                title: "TÜBİTAK Tarım Projesi",
+                description: "2025 yılında geliştirilen yapay zeka destekli tarım çözümü. Bitki hastalıklarını tespit etmek ve çiftçilere önerilerde bulunmak için deep learning algoritmalarını kullanıyor. TensorFlow ve Keras ile geliştirildi.",
+                color: "pink"
+            },
+            {
+                title: "Türkçe Yardım Çağrısı Tespiti",
+                description: "2025 yılında Türkçe doğal dil işleme modeli. Sosyal medya gönderilerinden yardım çağrılarını otomatik olarak tespit ediyor. BERT tabanlı model ile %92 doğruluk oranına ulaştık.",
+                color: "teal"
+            },
+            {
+                title: "Short-Movie Website",
+                description: "2024 yılında geliştirilen film ve dizi yönetim platformu. ASP.NET MVC ile backend, HTML/CSS/JavaScript ile frontend geliştirildi. Kullanıcılar film izleyebilir, değerlendirme yapabilir ve listeler oluşturabilir.",
+                color: "blue"
+            }
+        ];
+        
+        totalSlidesSpan.textContent = totalSlides;
+        
+        function updateCarousel() {
+            if (isExpanded) return;
+            
+            cards.forEach((card, index) => {
+                card.classList.remove('active', 'prev', 'next', 'hidden');
+                
+                if (index === currentIndex) {
+                    card.classList.add('active');
+                } else if (index === (currentIndex - 1 + totalSlides) % totalSlides) {
+                    card.classList.add('prev');
+                } else if (index === (currentIndex + 1) % totalSlides) {
+                    card.classList.add('next');
+                } else {
+                    card.classList.add('hidden');
+                }
+            });
+            
+            currentSlideSpan.textContent = currentIndex + 1;
+        }
+        
+        function nextSlide() {
+            if (isExpanded) return;
+            currentIndex = (currentIndex + 1) % totalSlides;
+            updateCarousel();
+        }
+        
+        function prevSlide() {
+            if (isExpanded) return;
+            currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
+            updateCarousel();
+        }
+        
+        function showProjectOverlay() {
+            if (!isExpanded) {
+                isExpanded = true;
+                const project = projects[currentIndex];
+                
+                overlayTitle.textContent = project.title;
+                overlayText.textContent = project.description;
+                
+                projectOverlay.classList.remove('pink', 'teal', 'blue');
+                projectOverlay.classList.add(project.color);
+                projectOverlay.classList.add('show');
+                carouselBottom.classList.add('hidden');
+            }
+        }
+        
+        function hideProjectOverlay() {
+            if (isExpanded) {
+                isExpanded = false;
+                projectOverlay.classList.remove('show');
+                carouselBottom.classList.remove('hidden');
+            }
+        }
+        
+        // Dice Roll Function
+        function diceRoll() {
+            if (isExpanded) return;
+            
+            const diceBtn = document.querySelector('.dice-btn');
+            diceBtn.classList.add('spinning');
+            
+            // Disable buttons during animation
+            nextBtn.disabled = true;
+            prevBtn.disabled = true;
+            diceBtn.disabled = true;
+            
+            // Generate random target before starting
+            const randomTarget = Math.floor(Math.random() * totalSlides);
+            
+            let rollCount = 0;
+            const maxRolls = 6; // Number of rapid transitions
+            const rollSpeed = 180; // Speed between rolls
+            
+            const rollInterval = setInterval(() => {
+                nextSlide();
+                rollCount++;
+                
+                if (rollCount >= maxRolls) {
+                    clearInterval(rollInterval);
+                    
+                    // Direct final selection without extra slide
+                    currentIndex = randomTarget;
+                    updateCarousel();
+                    
+                    // Re-enable buttons after a short delay
+                    setTimeout(() => {
+                        nextBtn.disabled = false;
+                        prevBtn.disabled = false;
+                        diceBtn.disabled = false;
+                        diceBtn.classList.remove('spinning');
+                    }, 200);
+                }
+            }, rollSpeed);
+        }
+
+        // Event listeners
+        nextBtn.addEventListener('click', nextSlide);
+        prevBtn.addEventListener('click', prevSlide);
+        
+        // Dice button listener
+        const diceBtn = document.querySelector('.dice-btn');
+        diceBtn.addEventListener('click', diceRoll);
+        
+        // Only active card clickable
+        cards.forEach((card, index) => {
+            card.addEventListener('click', (e) => {
+                if (card.classList.contains('active') && !isExpanded) {
+                    showProjectOverlay();
+                }
+            });
+        });
+        
+        // Close button functionality
+        closeBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            hideProjectOverlay();
+        });
+        
+        // ESC key to close
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && isExpanded) {
+                hideProjectOverlay();
+            }
+        });
+        
+        // Initialize carousel
+        updateCarousel();
+        
+        // Scroll Arrow functionality
+        const scrollArrow = document.querySelector('.scroll-arrow');
+        if (scrollArrow) {
+            scrollArrow.addEventListener('click', () => {
+                const aboutSection = document.querySelector('#about');
+                if (aboutSection) {
+                    rightSection.scrollTo({
+                        top: aboutSection.offsetTop,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        }
+        
+        // Auto-play (optional)
+        // setInterval(nextSlide, 3000);
+    </script>
+</body>
+</html> 
