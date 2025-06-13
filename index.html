@@ -42,7 +42,6 @@
                 <div class="page-indicators">
                     <a href="#profile" class="indicator active"></a>
                     <a href="#about" class="indicator"></a>
-                    <a href="#skills" class="indicator"></a>
                     <a href="#projects" class="indicator"></a>
                 </div>
                 
@@ -83,28 +82,7 @@
                     </div>
                 </section>
                 
-                <section id="skills" class="skills-main-section">
-                    <div class="about-content">
-                        <h2 class="section-title">Beceriler & Diller</h2>
-                        <div class="section-line"></div>
-                        <div class="skills-section">
-                            <div class="skill-category">
-                                <span class="skill-category-title">Teknik Beceriler:</span>
-                                <span class="skill-list">Python, Java, C, C++, C#, Git, Kotlin, HTML/CSS, JavaScript, SQL, Unity Engine, TensorFlow, Keras, ASP.NET MVC, Node.js, Entity Framework, RESTful API, Agile</span>
-                            </div>
-                            
-                            <div class="skill-category">
-                                <span class="skill-category-title">Kişisel Beceriler:</span>
-                                <span class="skill-list">Etkili iletişim, takım çalışması, problem çözme, liderlik, hızlı uyum sağlama, verimli zaman yönetimi</span>
-                            </div>
-                            
-                            <div class="skill-category">
-                                <span class="skill-category-title">Diller:</span>
-                                <span class="skill-list">Türkçe (Ana dil), İngilizce (B2)</span>
-                            </div>
-                        </div>
-                    </div>
-                </section>
+
                 
                 <section id="projects" class="projects-main-section">
                     <div class="section-header">
@@ -153,8 +131,44 @@
                     <div class="project-overlay">
                         <button class="close-btn">✕</button>
                         <div class="overlay-content">
-                            <h2></h2>
-                            <p></p>
+                            <div class="overlay-inner">
+                                <div class="overlay-header">
+                                    <h2 class="overlay-title"></h2>
+                                    <div class="overlay-subtitle"></div>
+                                </div>
+                                
+                                <div class="overlay-body">
+                                    <div class="overlay-left">
+                                        <div class="project-description">
+                                            <h3>Açıklama</h3>
+                                            <p class="description-text"></p>
+                                        </div>
+                                        
+                                        <div class="project-tech">
+                                            <h3>Teknolojiler</h3>
+                                            <div class="tech-tags"></div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="overlay-right">
+                                        <div class="project-features">
+                                            <h3>Özellikler</h3>
+                                            <ul class="features-list"></ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="project-links">
+                                    <a href="#" class="project-link github-link">
+                                        <i class="fa-brands fa-github"></i>
+                                        GitHub
+                                    </a>
+                                    <a href="#" class="project-link demo-link">
+                                        <i class="fa-solid fa-external-link"></i>
+                                        Demo
+                                    </a>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </section>
@@ -308,7 +322,7 @@
         
         // Scroll event listener
         rightSection.addEventListener('scroll', function() {
-            const sections = document.querySelectorAll('.profile-main-section, .about-main-section, .skills-main-section, .projects-main-section');
+            const sections = document.querySelectorAll('.profile-main-section, .about-main-section, .projects-main-section');
             const scrollTop = rightSection.scrollTop;
             const sectionHeight = rightSection.clientHeight;
             
@@ -327,7 +341,7 @@
         indicators.forEach((indicator, index) => {
             indicator.addEventListener('click', function(e) {
                 e.preventDefault();
-                const sections = document.querySelectorAll('.profile-main-section, .about-main-section, .skills-main-section, .projects-main-section');
+                const sections = document.querySelectorAll('.profile-main-section, .about-main-section, .projects-main-section');
                 if (sections[index]) {
                     rightSection.scrollTo({
                         top: sections[index].offsetTop,
@@ -357,17 +371,53 @@
         const projects = [
             {
                 title: "TÜBİTAK Tarım Projesi",
-                description: "2025 yılında geliştirilen yapay zeka destekli tarım çözümü. Bitki hastalıklarını tespit etmek ve çiftçilere önerilerde bulunmak için deep learning algoritmalarını kullanıyor. TensorFlow ve Keras ile geliştirildi.",
+                subtitle: "Tarımda planlı üretim • Mobil Uygulama",
+                description: "2025 yılında geliştirilen yapay zeka destekli tarım çözümü. Çiftçilerin bitki hastalıklarını erken teşhis etmelerine yardımcı olan ve tarımsal planlama konusunda akıllı öneriler sunan mobil uygulama. Makine öğrenmesi algoritmaları ile hastalık tespiti yaparak çiftçilere en uygun ilaçlama ve bakım önerileri sunuyor.",
+                technologies: ["Python", "TensorFlow", "Keras", "Android Studio", "Kotlin", "Firebase", "OpenCV", "REST API"],
+                features: [
+                    "Yapay zeka destekli hastalık tespiti",
+                    "Gerçek zamanlı bitki sağlığı analizi",
+                    "Akıllı ilaçlama önerileri",
+                    "Hava durumu entegrasyonu",
+                    "Tarım planı optimizasyonu",
+                    "Çiftçi topluluk platformu"
+                ],
+                githubLink: "https://github.com/example/tarim-projesi",
+                demoLink: "#",
                 color: "pink"
             },
             {
                 title: "Türkçe Yardım Çağrısı Tespiti",
-                description: "2025 yılında Türkçe doğal dil işleme modeli. Sosyal medya gönderilerinden yardım çağrılarını otomatik olarak tespit ediyor. BERT tabanlı model ile %92 doğruluk oranına ulaştık.",
+                subtitle: "Doğal dil işleme ile yardım tespiti",
+                description: "2025 yılında geliştirilen Türkçe doğal dil işleme modeli. Sosyal medya platformlarından gelen metinleri analiz ederek acil yardım çağrılarını otomatik olarak tespit eden sistem. BERT tabanlı transformer modeli kullanılarak %92 doğruluk oranına ulaşılmıştır.",
+                technologies: ["Python", "PyTorch", "Transformers", "BERT", "Flask", "Docker", "PostgreSQL", "Redis", "Elasticsearch"],
+                features: [
+                    "Gerçek zamanlı metin analizi",
+                    "Çok dilli destek (Türkçe odaklı)",
+                    "Acil durum sınıflandırması",
+                    "Otomatik bildirim sistemi",
+                    "API entegrasyonu",
+                    "Makine öğrenmesi modeli eğitimi"
+                ],
+                githubLink: "https://github.com/example/yardim-cagrisi",
+                demoLink: "#",
                 color: "teal"
             },
             {
                 title: "Short-Movie Website",
-                description: "2024 yılında geliştirilen film ve dizi yönetim platformu. ASP.NET MVC ile backend, HTML/CSS/JavaScript ile frontend geliştirildi. Kullanıcılar film izleyebilir, değerlendirme yapabilir ve listeler oluşturabilir.",
+                subtitle: "Film ve dizi yönetim platformu",
+                description: "2024 yılında geliştirilen kapsamlı film ve dizi yönetim platformu. Kullanıcılar film/dizi izleyebilir, değerlendirme yapabilir, kişisel listeler oluşturabilir ve diğer kullanıcılarla etkileşime geçebilir. Modern web teknolojileri ile geliştirilmiş responsive tasarım.",
+                technologies: ["ASP.NET MVC", "C#", "Entity Framework", "SQL Server", "HTML5", "CSS3", "JavaScript", "Bootstrap", "jQuery"],
+                features: [
+                    "Kullanıcı hesap yönetimi",
+                    "Film/dizi arama ve filtreleme",
+                    "Rating ve yorum sistemi",
+                    "Kişisel izleme listeleri",
+                    "Sosyal medya entegrasyonu",
+                    "Admin panel yönetimi"
+                ],
+                githubLink: "https://github.com/example/short-movie",
+                demoLink: "#",
                 color: "blue"
             }
         ];
@@ -411,8 +461,33 @@
                 isExpanded = true;
                 const project = projects[currentIndex];
                 
-                overlayTitle.textContent = project.title;
-                overlayText.textContent = project.description;
+                // Populate overlay content
+                document.querySelector('.overlay-title').textContent = project.title;
+                document.querySelector('.overlay-subtitle').textContent = project.subtitle;
+                document.querySelector('.description-text').textContent = project.description;
+                
+                // Populate technologies
+                const techTags = document.querySelector('.tech-tags');
+                techTags.innerHTML = '';
+                project.technologies.forEach(tech => {
+                    const tag = document.createElement('span');
+                    tag.className = 'tech-tag';
+                    tag.textContent = tech;
+                    techTags.appendChild(tag);
+                });
+                
+                // Populate features
+                const featuresList = document.querySelector('.features-list');
+                featuresList.innerHTML = '';
+                project.features.forEach(feature => {
+                    const li = document.createElement('li');
+                    li.textContent = feature;
+                    featuresList.appendChild(li);
+                });
+                
+                // Update links
+                document.querySelector('.github-link').href = project.githubLink;
+                document.querySelector('.demo-link').href = project.demoLink;
                 
                 projectOverlay.classList.remove('pink', 'teal', 'blue');
                 projectOverlay.classList.add(project.color);
