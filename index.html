@@ -353,6 +353,12 @@
         
         // Scroll event listener
         rightSection.addEventListener('scroll', function() {
+            // Eğer proje detayı açıksa ve scroll yapılıyorsa kapat
+            if (isExpanded) {
+                hideProjectOverlay();
+                return;
+            }
+            
             const sections = document.querySelectorAll('.profile-main-section, .about-main-section, .projects-main-section');
             const scrollTop = rightSection.scrollTop;
             const sectionHeight = rightSection.clientHeight;
