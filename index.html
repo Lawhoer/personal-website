@@ -16,7 +16,7 @@
             <div class="left-section">
                 <div class="profile-section">
                     <div class="profile-photo">
-                        <img src="res/profil.png" alt="Profil Fotoğrafı">
+                        <img src="res/picture/profil.png" alt="Profil Fotoğrafı">
                     </div>
                     <div class="profile-text">
                         <h1 class="name">Eren Akıncı</h1>
@@ -100,15 +100,29 @@
                             
                             <div class="carousel-card">
                                 <div class="card-content">
-                                    <h3>Türkçe Yardım Çağrısı</h3>
-                                    <p>Doğal dil işleme ile yardım tespiti</p>
+                                    <h3>Türkçe Yardım Çağrısı Tespit Modeli</h3>
+                                    <p>NLP ile acil durum tespiti | Yapay Zeka Modeli</p>
                                 </div>
                             </div>
                             
                             <div class="carousel-card">
                                 <div class="card-content">
-                                    <h3>Short-Movie Website</h3>
-                                    <p>Film ve dizi yönetim platformu</p>
+                                    <h3>Kısa Film Sitesi</h3>
+                                    <p>İnteraktif bir kısa film sitesi | Web Site</p>
+                                </div>
+                            </div>
+                            
+                            <div class="carousel-card">
+                                <div class="card-content">
+                                    <h3>Masaüstü Çeviri Uygulaması</h3>
+                                    <p>OCR ile çeviri uygulaması | Masaüstü Uygulaması</p>
+                                </div>
+                            </div>
+                            
+                            <div class="carousel-card">
+                                <div class="card-content">
+                                    <h3>Imdb-Inator Chrome Uzantısı</h3>
+                                    <p>Film bilgisi çeken browser uzantısı | Chrome Uzantısı</p>
                                 </div>
                             </div>
                         </div>
@@ -130,42 +144,59 @@
                     <!-- Project Overlay -->
                     <div class="project-overlay">
                         <button class="close-btn">✕</button>
-                        <div class="overlay-content">
-                            <div class="overlay-inner">
-                                <div class="overlay-header">
-                                    <h2 class="overlay-title"></h2>
-                                    <div class="overlay-subtitle"></div>
+                        
+                        <div class="project-inner">
+                            <!-- Project Video Section -->
+                            <div class="project-video-section">
+                                <!-- Video Container -->
+                                <div class="video-container" style="display: none;">
+                                    <video autoplay muted loop class="video-background">
+                                        <source src="res/vid/extention.mp4" type="video/mp4">
+                                    </video>
+                                    <video autoplay muted loop class="project-video">
+                                        <source src="res/vid/extention.mp4" type="video/mp4">
+                                    </video>
                                 </div>
                                 
-                                <div class="overlay-body">
-                                    <div class="overlay-left">
-                                        <div class="project-description">
-                                            <h3>Açıklama</h3>
-                                            <p class="description-text"></p>
-                                        </div>
-                                        
-                                        <div class="project-tech">
-                                            <h3>Teknolojiler</h3>
-                                            <div class="tech-tags"></div>
-                                        </div>
+                                <!-- Slideshow Container -->
+                                <div class="project-image-slideshow" style="display: none;">
+                                    <img src="res/picture/Tarim_mobil_1.png" class="slideshow-background">
+                                    <img src="res/picture/Tarim_mobil_1.png" class="slideshow-image active">
+                                    <img src="res/picture/Tarim_mobil_2.png" class="slideshow-image">
+                                    <img src="res/picture/Tarim_mobil_3.png" class="slideshow-image">
+                                    <img src="res/picture/Tarim_mobil_4.png" class="slideshow-image">
+                                    <img src="res/picture/Tarim_mobil_5.png" class="slideshow-image">
+                                    <img src="res/picture/Tarim_mobil_6.png" class="slideshow-image">
+                                    <img src="res/picture/Tarim_mobil_7.png" class="slideshow-image">
+                                </div>
+                                
+                                <!-- BERT Image Container -->
+                                <div class="bert-image-container" style="display: none;">
+                                    <img src="res/picture/bert_web.png" class="bert-background">
+                                    <img src="res/picture/bert_web.png" class="bert-image">
+                                </div>
+                            </div>
+                            
+                            <!-- Project Content Section -->
+                            <div class="project-content-section">
+                                <div class="project-header">
+                                    <div class="project-title-row">
+                                        <h2 class="overlay-title"></h2>
+                                        <div class="project-year"></div>
                                     </div>
-                                    
-                                    <div class="overlay-right">
-                                        <div class="project-features">
-                                            <h3>Özellikler</h3>
-                                            <ul class="features-list"></ul>
-                                        </div>
+                                    <div class="project-technologies-section">
+                                        <span class="project-technologies-inline"></span>
                                     </div>
                                 </div>
                                 
-                                <div class="project-links">
+                                <div class="project-description">
+                                    <ul class="project-features-list"></ul>
+                                </div>
+                                
+                                <div class="project-github-link">
                                     <a href="#" class="project-link github-link">
                                         <i class="fa-brands fa-github"></i>
-                                        GitHub
-                                    </a>
-                                    <a href="#" class="project-link demo-link">
-                                        <i class="fa-solid fa-external-link"></i>
-                                        Demo
+                                        GitHub'da Görüntüle
                                     </a>
                                 </div>
                             </div>
@@ -370,55 +401,65 @@
         // Project data
         const projects = [
             {
-                title: "TÜBİTAK Tarım Projesi",
-                subtitle: "Tarımda planlı üretim • Mobil Uygulama",
-                description: "2025 yılında geliştirilen yapay zeka destekli tarım çözümü. Çiftçilerin bitki hastalıklarını erken teşhis etmelerine yardımcı olan ve tarımsal planlama konusunda akıllı öneriler sunan mobil uygulama. Makine öğrenmesi algoritmaları ile hastalık tespiti yaparak çiftçilere en uygun ilaçlama ve bakım önerileri sunuyor.",
-                technologies: ["Python", "TensorFlow", "Keras", "Android Studio", "Kotlin", "Firebase", "OpenCV", "REST API"],
+                title: "Tarımda Planlı Üretim (TÜBİTAK 2209-A)",
+                technologies: "Kotlin, Android Studio, Mobil Geliştirme, Veri Analizi, MapboxAPI, Firebase",
+                year: "2025",
                 features: [
-                    "Yapay zeka destekli hastalık tespiti",
-                    "Gerçek zamanlı bitki sağlığı analizi",
-                    "Akıllı ilaçlama önerileri",
-                    "Hava durumu entegrasyonu",
-                    "Tarım planı optimizasyonu",
-                    "Çiftçi topluluk platformu"
+                    "Türkiye'de tarım sektöründe plansız üretimin önüne geçmek için geliştirilen, sürdürülebilir ve dengeli üretim hedefleyen mobil uygulama.",
+                    "Gerçek zamanlı ekim verilerinin harita tabanlı gösterimi ile, çiftçilerin ülkenin tarımsal ihtiyaçlarını karşılayacak şekilde üretim kararı almasına yardımcı olan mobil uygulama.",
+                    "TUBITAK 2209-A Universite Oğrencileri Araştırma Projeleri Destekleme Programı kapsamında desteklenen bir projedir."
                 ],
                 githubLink: "https://github.com/example/tarim-projesi",
-                demoLink: "#",
                 color: "pink"
             },
             {
-                title: "Türkçe Yardım Çağrısı Tespiti",
-                subtitle: "Doğal dil işleme ile yardım tespiti",
-                description: "2025 yılında geliştirilen Türkçe doğal dil işleme modeli. Sosyal medya platformlarından gelen metinleri analiz ederek acil yardım çağrılarını otomatik olarak tespit eden sistem. BERT tabanlı transformer modeli kullanılarak %92 doğruluk oranına ulaşılmıştır.",
-                technologies: ["Python", "PyTorch", "Transformers", "BERT", "Flask", "Docker", "PostgreSQL", "Redis", "Elasticsearch"],
+                title: "Türkçe Yardım Çağrısı Tespit Modeli",
+                technologies: "Python, PyTorch, BERT, Transformers, Flask, NLP",
+                year: "2025",
                 features: [
-                    "Gerçek zamanlı metin analizi",
-                    "Çok dilli destek (Türkçe odaklı)",
-                    "Acil durum sınıflandırması",
-                    "Otomatik bildirim sistemi",
-                    "API entegrasyonu",
-                    "Makine öğrenmesi modeli eğitimi"
+                    "Afet durumlarında sosyal medya üzerinden yapılan acil yardım çağrılarını otomatik olarak tespit etmek amacıyla geliştirilen Türkçe NLP projesi.",
+                    "Piyasada mevcut olan veri setlerinin yetersizliği nedeniyle, sosyal medya (Twitter-X) verileri toplanarak manuel olarak etiketlenip genişletilmiş, böylece özel olarak hazırlanmış bir Türkçe yardım çağrısı veri seti oluşturulmuştur.",
+                    "Türkçe sosyal medya verileri üzerinde, dbmdz/bert-base-turkish-cased modeli transfer öğrenme yöntemiyle yeniden eğitilerek, yardım çağrılarını tespit edebilen ikili sınıflandırma modeli geliştirildi.",
+                    "Flask web framework'ü ile real-time tahmin yapan responsive web arayüzü ve RESTful API geliştirildi."
                 ],
                 githubLink: "https://github.com/example/yardim-cagrisi",
-                demoLink: "#",
                 color: "teal"
             },
             {
                 title: "Short-Movie Website",
-                subtitle: "Film ve dizi yönetim platformu",
-                description: "2024 yılında geliştirilen kapsamlı film ve dizi yönetim platformu. Kullanıcılar film/dizi izleyebilir, değerlendirme yapabilir, kişisel listeler oluşturabilir ve diğer kullanıcılarla etkileşime geçebilir. Modern web teknolojileri ile geliştirilmiş responsive tasarım.",
-                technologies: ["ASP.NET MVC", "C#", "Entity Framework", "SQL Server", "HTML5", "CSS3", "JavaScript", "Bootstrap", "jQuery"],
+                technologies: "HTML, CSS, JS, Bootstrap, ASP.NET MVC, Entity, Repository Design Pattern, MS SQL",
+                year: "2024",
                 features: [
-                    "Kullanıcı hesap yönetimi",
-                    "Film/dizi arama ve filtreleme",
-                    "Rating ve yorum sistemi",
-                    "Kişisel izleme listeleri",
-                    "Sosyal medya entegrasyonu",
-                    "Admin panel yönetimi"
+                    "Kısa film tutkunları için responsive tasarım ve katmanlı mimari kullanılarak geliştirilen interaktif bir dijital platform.",
+                    "Projenin yönetimi için kapsamı genişletilebilir bir admin paneli entegre edildi.",
+                    "Bu projenin GitHub adresine, proje başlığına tıklayarak ulaşabilirsiniz."
                 ],
                 githubLink: "https://github.com/example/short-movie",
-                demoLink: "#",
                 color: "blue"
+            },
+            {
+                title: "Translation Application",
+                technologies: "Java, JavaFX, OCR, Google Translate API, NativeKeyListener",
+                year: "2023",
+                features: [
+                    "OCR teknolojisi ile ekrandaki metinleri tespit edip 150+ dilde anında çeviri yapabilen bir masaüstü uygulaması.",
+                    "Google Translate API entegrasyonu ile doğru ve hızlı çeviri imkanı sunmaktadır.",
+                    "Bu projenin GitHub adresine, proje başlığına tıklayarak ulaşabilirsiniz."
+                ],
+                githubLink: "https://github.com/example/translation-app",
+                color: "green"
+            },
+            {
+                title: "Imdb-Inator Chrome Uzantısı",
+                technologies: "HTML, CSS, JS, Node.js, Express, Puppeteer, Axios",
+                year: "2023",
+                features: [
+                    "IMDB'den istediğiniz filmlerin bilgilerini çekerek kullanıcıya sade ve kullanışlı bir arayüz sunan Chrome uzantısı.",
+                    "Node.js ile sunucu entegrasyonu sağlanıp dinamik veri alışverişi sağlandı.",
+                    "Bu projenin GitHub adresine, proje başlığına tıklayarak ulaşabilirsiniz."
+                ],
+                githubLink: "https://github.com/example/imdb-inator",
+                color: "orange"
             }
         ];
         
@@ -463,21 +504,11 @@
                 
                 // Populate overlay content
                 document.querySelector('.overlay-title').textContent = project.title;
-                document.querySelector('.overlay-subtitle').textContent = project.subtitle;
-                document.querySelector('.description-text').textContent = project.description;
+                document.querySelector('.project-technologies-inline').textContent = project.technologies;
+                document.querySelector('.project-year').textContent = project.year;
                 
-                // Populate technologies
-                const techTags = document.querySelector('.tech-tags');
-                techTags.innerHTML = '';
-                project.technologies.forEach(tech => {
-                    const tag = document.createElement('span');
-                    tag.className = 'tech-tag';
-                    tag.textContent = tech;
-                    techTags.appendChild(tag);
-                });
-                
-                // Populate features
-                const featuresList = document.querySelector('.features-list');
+                // Populate features list
+                const featuresList = document.querySelector('.project-features-list');
                 featuresList.innerHTML = '';
                 project.features.forEach(feature => {
                     const li = document.createElement('li');
@@ -485,20 +516,185 @@
                     featuresList.appendChild(li);
                 });
                 
-                // Update links
+                // Update GitHub link
                 document.querySelector('.github-link').href = project.githubLink;
-                document.querySelector('.demo-link').href = project.demoLink;
                 
-                projectOverlay.classList.remove('pink', 'teal', 'blue');
+                // Show content based on current project index
+                // Önce tüm slideshow'ları durdur
+                stopSlideshow();
+                
+                switch (currentIndex) {
+                    case 0:
+                        // Tarım projesi - slideshow göster
+                        document.querySelector('.video-container').style.display = 'none';
+                        document.querySelector('.project-image-slideshow').style.display = 'block';
+                        document.querySelector('.bert-image-container').style.display = 'none';
+                        startSlideshow();
+                        break;
+                        
+                    case 1:
+                        // BERT projesi - resim göster
+                        document.querySelector('.video-container').style.display = 'none';
+                        document.querySelector('.project-image-slideshow').style.display = 'none';
+                        document.querySelector('.bert-image-container').style.display = 'block';
+                        break;
+                        
+                    case 2:
+                        // Short movie projesi - video göster
+                        document.querySelector('.video-container').style.display = 'block';
+                        document.querySelector('.project-image-slideshow').style.display = 'none';
+                        document.querySelector('.bert-image-container').style.display = 'none';
+                        
+                        const videoSources2 = document.querySelectorAll('.video-container video source');
+                        videoSources2.forEach(source => {
+                            source.src = 'res/vid/short_movie.mp4';
+                        });
+                        
+                        const videos2 = document.querySelectorAll('.video-container video');
+                        videos2.forEach(video => {
+                            video.load();
+                            video.play();
+                        });
+                        
+                        // Video senkronizasyonu
+                        const mainVideo2 = document.querySelector('.video-container .project-video');
+                        const backgroundVideo2 = document.querySelector('.video-container .video-background');
+                        if (mainVideo2 && backgroundVideo2) {
+                            mainVideo2.addEventListener('timeupdate', () => {
+                                if (Math.abs(backgroundVideo2.currentTime - mainVideo2.currentTime) > 0.5) {
+                                    backgroundVideo2.currentTime = mainVideo2.currentTime;
+                                }
+                            });
+                            backgroundVideo2.currentTime = mainVideo2.currentTime;
+                        }
+                        break;
+                        
+                    case 3:
+                        // Çeviri uygulaması - video göster
+                        document.querySelector('.video-container').style.display = 'block';
+                        document.querySelector('.project-image-slideshow').style.display = 'none';
+                        document.querySelector('.bert-image-container').style.display = 'none';
+                        
+                        const videoSources3 = document.querySelectorAll('.video-container video source');
+                        videoSources3.forEach(source => {
+                            source.src = 'res/vid/ceviri.mp4';
+                        });
+                        
+                        const videos3 = document.querySelectorAll('.video-container video');
+                        videos3.forEach(video => {
+                            video.load();
+                            video.play();
+                        });
+                        
+                        // Video senkronizasyonu
+                        const mainVideo3 = document.querySelector('.video-container .project-video');
+                        const backgroundVideo3 = document.querySelector('.video-container .video-background');
+                        if (mainVideo3 && backgroundVideo3) {
+                            mainVideo3.addEventListener('timeupdate', () => {
+                                if (Math.abs(backgroundVideo3.currentTime - mainVideo3.currentTime) > 0.5) {
+                                    backgroundVideo3.currentTime = mainVideo3.currentTime;
+                                }
+                            });
+                            backgroundVideo3.currentTime = mainVideo3.currentTime;
+                        }
+                        break;
+                        
+                    default:
+                        // Extension projesi (index 4) ve diğer durumlar - video göster
+                        document.querySelector('.video-container').style.display = 'block';
+                        document.querySelector('.project-image-slideshow').style.display = 'none';
+                        document.querySelector('.bert-image-container').style.display = 'none';
+                        
+                        const videoSourcesDefault = document.querySelectorAll('.video-container video source');
+                        videoSourcesDefault.forEach(source => {
+                            source.src = 'res/vid/extention.mp4';
+                        });
+                        
+                        const videosDefault = document.querySelectorAll('.video-container video');
+                        videosDefault.forEach(video => {
+                            video.load();
+                            video.play();
+                        });
+                        
+                        // Video senkronizasyonu
+                        const mainVideoDefault = document.querySelector('.video-container .project-video');
+                        const backgroundVideoDefault = document.querySelector('.video-container .video-background');
+                        if (mainVideoDefault && backgroundVideoDefault) {
+                            mainVideoDefault.addEventListener('timeupdate', () => {
+                                if (Math.abs(backgroundVideoDefault.currentTime - mainVideoDefault.currentTime) > 0.5) {
+                                    backgroundVideoDefault.currentTime = mainVideoDefault.currentTime;
+                                }
+                            });
+                            backgroundVideoDefault.currentTime = mainVideoDefault.currentTime;
+                        }
+                        break;
+                }
+                
+                projectOverlay.classList.remove('pink', 'teal', 'blue', 'green', 'orange');
                 projectOverlay.classList.add(project.color);
                 projectOverlay.classList.add('show');
                 carouselBottom.classList.add('hidden');
             }
         }
         
+        // Slideshow functionality
+        let slideshowInterval;
+        function startSlideshow() {
+            const images = document.querySelectorAll('.slideshow-image');
+            const backgroundImg = document.querySelector('.slideshow-background');
+            
+            // Clear any existing interval
+            if (slideshowInterval) {
+                clearInterval(slideshowInterval);
+                slideshowInterval = null;
+            }
+            
+            // Reset to first image
+            images.forEach((img, index) => {
+                img.classList.remove('active');
+                if (index === 0) {
+                    img.classList.add('active');
+                }
+            });
+            
+            // Set background to first image
+            if (backgroundImg && images.length > 0) {
+                backgroundImg.src = images[0].src;
+            }
+            
+            let currentSlide = 0;
+            
+            slideshowInterval = setInterval(() => {
+                // Remove active class from current image
+                images[currentSlide].classList.remove('active');
+                
+                // Move to next image
+                currentSlide = (currentSlide + 1) % images.length;
+                
+                // Add active class to new image
+                images[currentSlide].classList.add('active');
+                
+                // Update background image
+                if (backgroundImg) {
+                    backgroundImg.src = images[currentSlide].src;
+                }
+            }, 2500); // Change image every 2.5 seconds
+        }
+        
+        function stopSlideshow() {
+            if (slideshowInterval) {
+                clearInterval(slideshowInterval);
+                slideshowInterval = null;
+            }
+        }
+        
         function hideProjectOverlay() {
             if (isExpanded) {
                 isExpanded = false;
+                
+                // Stop slideshow
+                stopSlideshow();
+                
                 projectOverlay.classList.remove('show');
                 carouselBottom.classList.remove('hidden');
             }

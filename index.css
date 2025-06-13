@@ -6,7 +6,7 @@
 
 body {
     font-family: Arial, sans-serif;
-    background: url('res/background.jpg') no-repeat center center fixed;
+    background: url('res/picture/background.jpg') no-repeat center center fixed;
     background-size: cover;
     backdrop-filter: blur(100px);
     height: 100vh;
@@ -115,7 +115,7 @@ body {
 }
 
 .name {
-    background: linear-gradient(135deg, #FF6B9D, #C779D0, #4BC0C8);
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -188,7 +188,6 @@ body {
 }
 
 .download-btn:hover {
-    transform: translateY(-2px);
     box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
     background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
 }
@@ -212,7 +211,7 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background: url('res/background.jpg') no-repeat center center;
+    background: url('res/picture/background.jpg') no-repeat center center;
     background-size: cover;
     filter: blur(50px);
     -webkit-filter: blur(30px);
@@ -503,7 +502,7 @@ body {
 }
 
 .dynamic-text {
-    background: linear-gradient(135deg, #FF6B9D, #C779D0, #4BC0C8);
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -556,7 +555,7 @@ body {
 }
 
 .indicator.active {
-    background: rgba(255, 255, 255, 0.9);
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     border-color: rgba(255, 255, 255, 1);
 }
 
@@ -794,6 +793,14 @@ body {
     background: linear-gradient(135deg, #FF9A8B, #6A82FB, #FC466B);
 }
 
+.carousel-card:nth-child(4) {
+    background: linear-gradient(135deg, #667eea, #764ba2, #8B5FBF);
+}
+
+.carousel-card:nth-child(5) {
+    background: linear-gradient(135deg, #FF8A65, #FFB74D, #FFF176, #FFAB91);
+}
+
 .carousel-card.active {
     z-index: 3;
     transform: translate(-50%, -50%) scale(1);
@@ -824,15 +831,15 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background: #ffffff;
+    background: linear-gradient(to bottom, #FF6B9D 0%, #C779D0 50%, #4BC0C8 100%);
     opacity: 0;
     visibility: hidden;
     transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     z-index: 1000;
-    overflow: hidden;
+    overflow-y: auto;
     display: flex;
-    align-items: center;
-    justify-content: center;
+    flex-direction: column;
+    border-radius: 20px;
 }
 
 .project-overlay.show {
@@ -840,184 +847,200 @@ body {
     visibility: visible;
 }
 
-.project-overlay.teal .overlay-content {
-    background: linear-gradient(135deg, #4ECDC4, #F38BA8, #FFD23F);
+.project-overlay.teal {
+    background: linear-gradient(to bottom, #4ECDC4 0%, #F38BA8 50%, #FFD23F 100%);
 }
 
-.project-overlay.blue .overlay-content {
-    background: linear-gradient(135deg, #FF9A8B, #6A82FB, #FC466B);
+.project-overlay.blue {
+    background: linear-gradient(to bottom, #FF9A8B 0%, #6A82FB 50%, #FC466B 100%);
 }
 
-.overlay-content {
-    color: #333333;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(135deg, #FF6B9D, #C779D0, #4BC0C8);
-    padding: 10px;
+.project-overlay.green {
+    background: linear-gradient(to bottom, #667eea 0%, #764ba2 50%, #8B5FBF 100%);
 }
 
-.overlay-inner {
-    background: #ffffff;
-    border-radius: 10px;
-    padding: 30px;
-    height: 100%;
-    max-width: 100%;
-    margin: 0 auto;
+.project-overlay.orange {
+    background: linear-gradient(to bottom, #FF8A65 0%, #FFB74D 33%, #FFF176 66%, #FFAB91 100%);
+}
+
+.project-inner {
+    margin-left: 5px;
+    background: #EBE6E2;
+    border-radius: 20px 0 0 20px;
+    height: 99.5%;
+    overflow-y: auto;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
 }
 
-.overlay-header {
-    text-align: center;
-    flex-shrink: 0;
+/* Project Video Section */
+.project-video-section {
+    width: 100%;
+    height: 450px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 15px 15px 0 0;
+    background: #000;
+}
+
+/* Video Container */
+.video-container {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+.video-container .video-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: blur(20px);
+    z-index: 1;
+    transform: scale(1.1);
+    opacity: 0.8;
+}
+
+.video-container .project-video {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+    position: relative;
+    z-index: 2;
+}
+
+/* Legacy video styles for backward compatibility */
+.project-video-section .video-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: blur(20px);
+    z-index: 1;
+    transform: scale(1.1);
+    opacity: 0.8;
+}
+
+.project-video {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+    border-radius: 15px 15px 0 0;
+    position: relative;
+    z-index: 2;
+}
+
+/* Project Content Section */
+.project-content-section {
+    flex: 1;
+    padding: 20px 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    border-radius: 0 0 15px 15px;
+}
+
+.project-header {
+    text-align: left;
+}
+
+.project-title-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 15px;
 }
 
 .overlay-title {
-    font-size: 1.8rem;
+    font-size: 1.7rem;
     font-weight: 700;
-    margin-bottom: 5px;
-    background: linear-gradient(135deg, #FF6B9D, #C779D0, #4BC0C8);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    color: #E4DFDB;
     letter-spacing: 0.5px;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
-    filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.1));
-}
-
-.project-overlay.teal .overlay-title {
-    background: linear-gradient(135deg, #4ECDC4, #F38BA8, #FFD23F);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-}
-
-.project-overlay.blue .overlay-title {
-    background: linear-gradient(135deg, #FF9A8B, #6A82FB, #FC466B);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-}
-
-.overlay-subtitle {
-    font-size: 0.9rem;
-    color: #666666;
-    font-weight: 400;
-}
-
-.overlay-body {
+    margin: 0;
     flex: 1;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 20px;
-    align-items: center;
-    margin: 25px 0;
 }
 
-.overlay-left {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-}
-
-.overlay-right {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-}
-
-.project-description, .project-tech, .project-features {
-    background: rgba(248, 248, 248, 0.8);
-    padding: 15px;
-    border-radius: 8px;
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(0, 0, 0, 0.1);
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
-}
-
-.project-description h3, .project-tech h3, .project-features h3 {
-    font-size: 1rem;
+.project-year {
+    font-size: 1.08rem;
     font-weight: 600;
-    margin-bottom: 10px;
-    color: #333333;
+    color: #1E5366;
+    padding: 8px 20px;
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 20px;
+    display: inline-block;
+    margin-left: 20px;
+    white-space: nowrap;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
 }
 
-.description-text {
-    font-size: 0.85rem;
-    line-height: 1.4;
-    color: #555555;
-}
 
-.tech-tags {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-}
-
-.tech-tag {
-    background: rgba(0, 0, 0, 0.05);
-    color: #333333;
-    padding: 6px 12px;
-    border-radius: 15px;
-    font-size: 0.8rem;
+.project-technologies-inline {
+    font-size: 0.9rem;
+    color: #555;
     font-weight: 500;
-    border: 1px solid rgba(0, 0, 0, 0.1);
-    transition: all 0.3s ease;
+    line-height: 1.5;
+    display: block;
+    padding: 10px 0;
+    border-left: 4px solid #1E5366;
+    padding-left: 15px;
 }
 
-.tech-tag:hover {
-    background: rgba(0, 0, 0, 0.1);
-    transform: translateY(-1px);
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-}
-
-.features-list {
+.project-features-list {
     list-style: none;
     padding: 0;
     margin: 0;
 }
 
-.features-list li {
-    padding: 4px 0;
-    font-size: 0.8rem;
-    color: #555555;
+.project-features-list li {
+    font-size: 0.9rem;
+    color: #000000;
+    font-weight: 400;
+    line-height: 1.6;
+    margin-bottom: 15px;
+    padding-left: 20px;
     position: relative;
-    padding-left: 15px;
-    line-height: 1.3;
 }
 
-.features-list li::before {
+.project-features-list li::before {
     content: "•";
+    color: #333;
+    font-weight: bold;
     position: absolute;
     left: 0;
-    top: 4px;
-    color: #4ecdc4;
-    font-weight: bold;
-    font-size: 0.9rem;
+    top: 0;
 }
 
-.project-links {
-    display: flex;
-    gap: 15px;
-    justify-content: center;
-    flex-shrink: 0;
+.project-features-list li:last-child {
+    margin-bottom: 0;
+}
+
+.project-github-link {
+    text-align: center;
 }
 
 .project-link {
     display: inline-flex;
     align-items: center;
-    gap: 6px;
-    padding: 10px 20px;
+    gap: 8px;
+    padding: 12px 24px;
     background: linear-gradient(135deg, #FF6B9D, #C779D0, #4BC0C8);
     color: white;
     text-decoration: none;
-    border-radius: 20px;
-    font-weight: 500;
-    font-size: 0.85rem;
+    border-radius: 25px;
+    font-weight: 600;
+    font-size: 0.8rem;
     border: none;
     transition: all 0.3s ease;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
 
 .project-overlay.teal .project-link {
@@ -1028,9 +1051,17 @@ body {
     background: linear-gradient(135deg, #FF9A8B, #6A82FB, #FC466B);
 }
 
+.project-overlay.green .project-link {
+    background: linear-gradient(135deg, #667eea, #764ba2, #8B5FBF);
+}
+
+.project-overlay.orange .project-link {
+    background: linear-gradient(135deg, #FF8A65, #FFB74D, #FFF176, #FFAB91);
+}
+
 .project-link:hover {
     transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
     color: white;
 }
 
@@ -1138,13 +1169,13 @@ body {
 }
 
 .dice-btn {
-    background: rgba(255, 107, 157, 0.9) !important;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
     color: white !important;
     margin-left: auto;
 }
 
 .dice-btn:hover {
-    background: rgba(255, 107, 157, 1) !important;
+    background: linear-gradient(135deg, #764ba2 0%, #667eea 100%) !important;
     transform: scale(1.1) rotate(360deg);
     transition: all 0.5s ease;
 }
@@ -1170,7 +1201,10 @@ body {
 }
 
 .current-slide {
-    color: #FF6B9D;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
 }
 
 .total-slides {
@@ -1720,70 +1754,36 @@ body {
 
 /* Overlay Responsive */
 @media (max-width: 768px) {
-    .overlay-content {
-        padding: 8px;
-    }
-    
-    .overlay-inner {
+    .project-content-section {
         padding: 20px;
-    }
-    
-    .overlay-body {
-        grid-template-columns: 1fr;
-        gap: 15px;
-        margin: 20px 0;
     }
     
     .overlay-title {
         font-size: 1.5rem;
     }
     
-    .overlay-subtitle {
-        font-size: 0.8rem;
-    }
-    
-    .project-description, .project-tech, .project-features {
-        padding: 12px;
-    }
-    
-    .project-description h3, .project-tech h3, .project-features h3 {
+    .project-mini-description {
         font-size: 0.9rem;
-        margin-bottom: 8px;
+        margin-bottom: 20px;
     }
     
-    .description-text {
-        font-size: 0.8rem;
-    }
-    
-    .features-list li {
-        font-size: 0.75rem;
-        padding: 3px 0;
-        padding-left: 12px;
+    .tech-section-title {
+        font-size: 1rem;
     }
     
     .tech-tag {
-        font-size: 0.7rem;
-        padding: 4px 8px;
+        font-size: 0.75rem;
+        padding: 6px 12px;
     }
     
     .project-link {
-        padding: 8px 16px;
-        font-size: 0.8rem;
-        gap: 4px;
-    }
-    
-    .project-links {
-        gap: 10px;
-        flex-wrap: wrap;
+        padding: 10px 20px;
+        font-size: 0.85rem;
     }
 }
 
 @media (max-width: 480px) {
-    .overlay-content {
-        padding: 5px;
-    }
-    
-    .overlay-inner {
+    .project-content-section {
         padding: 15px;
     }
     
@@ -1791,43 +1791,28 @@ body {
         font-size: 1.3rem;
     }
     
-    .overlay-subtitle {
-        font-size: 0.75rem;
-    }
-    
-    .overlay-body {
-        margin: 15px 0;
-        gap: 12px;
-    }
-    
-    .project-description, .project-tech, .project-features {
-        padding: 10px;
-        border-radius: 6px;
-    }
-    
-    .project-description h3, .project-tech h3, .project-features h3 {
+    .project-mini-description {
         font-size: 0.85rem;
+        margin-bottom: 15px;
     }
     
-    .description-text {
-        font-size: 0.75rem;
-        line-height: 1.3;
+    .project-technologies {
+        margin-bottom: 20px;
     }
     
-    .features-list li {
-        font-size: 0.7rem;
-        padding-left: 10px;
+    .tech-section-title {
+        font-size: 0.9rem;
+        margin-bottom: 8px;
     }
     
     .tech-tag {
-        font-size: 0.65rem;
-        padding: 3px 6px;
+        font-size: 0.7rem;
+        padding: 5px 10px;
     }
     
     .project-link {
-        padding: 6px 12px;
-        font-size: 0.75rem;
-        border-radius: 15px;
+        padding: 8px 16px;
+        font-size: 0.8rem;
     }
     
     .close-btn {
@@ -1837,4 +1822,112 @@ body {
         top: 8px;
         right: 8px;
     }
+}
+
+/* Project PDF Section */
+.project-pdf-section {
+    width: 100%;
+    height: 450px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 15px 15px 0 0;
+    background: #f5f5f5;
+}
+
+.project-pdf-section .pdf-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, #f0f0f0, #e0e0e0);
+    filter: blur(20px);
+    z-index: 1;
+    transform: scale(1.1);
+    opacity: 0.8;
+}
+
+.project-pdf {
+    width: 100%;
+    height: 100%;
+    border: none;
+    border-radius: 15px 15px 0 0;
+    position: relative;
+    z-index: 2;
+    background: white;
+}
+
+/* Project Image Slideshow */
+.project-image-slideshow {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 15px 15px 0 0;
+}
+
+.slideshow-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: blur(20px);
+    z-index: 1;
+    transform: scale(1.1);
+    opacity: 0.8;
+    transition: all 0.5s ease;
+}
+
+.slideshow-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    border-radius: 15px 15px 0 0;
+    z-index: 2;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.slideshow-image.active {
+    opacity: 1;
+}
+
+/* BERT Image Container */
+.bert-image-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 15px 15px 0 0;
+    overflow: hidden;
+}
+
+.bert-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: blur(8px) brightness(0.4);
+    scale: 1.1;
+    z-index: 1;
+}
+
+.bert-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    border-radius: 15px 15px 0 0;
+    z-index: 2;
 } 
