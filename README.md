@@ -1,4 +1,4 @@
-# Kişisel Website 
+# Kişisel Website
 
 Merhaba! Bu, benim kişisel web sitem. Eğer bir göz atmak istersen, aşağıdaki linke tıklaman yeterli.
 
